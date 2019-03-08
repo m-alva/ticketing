@@ -1,0 +1,180 @@
+.icon-svg{
+    
+}
+
+a,
+a:visited{
+    color: #0087af;
+}
+
+.container{
+    width: 100%;
+    max-width: 76%;
+    margin: 0 auto;
+    @media screen and (max-width: 50rem) {
+        max-width: 100%;
+        padding: 1rem;        
+    }
+}
+
+ul.normal-list{
+    li{
+        list-style-type: none;
+        line-height: $paragrah-line-height;
+        font-size:  $paragraph-font-tiny-height;
+        &::before{
+            content: '\25A0';
+            color: $palette-10;
+            padding-right: 0.8rem;
+        }
+    }
+}
+
+.row,
+.row.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .col,
+    .column{
+        flex-basis: 100%;
+    }
+}
+
+.ep-container {
+    width: 92%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.mat-button,
+.mat-raised-button{
+    min-width: 11rem;
+}
+
+.ep-title{
+    line-height: 140%;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.ep-expander{
+    flex: 1 1 100%;
+}
+
+.ep-text-center{
+    text-align: center;
+}
+
+.ep-form{
+    margin: 2rem 0rem;
+    .row{
+        .col{
+            padding: 0 6%;
+            margin-bottom: 0.6rem;
+        }
+    }
+}
+
+.icon-btn{
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background: $palette-10;
+        color: white;
+    }
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+    line-height: 160%;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.2rem;
+}
+h3{
+    font-size: 1.5rem;
+}
+p{
+    font-size: 1rem;
+}
+.center{
+    text-align: center;
+}
+%button{
+    padding: 0rem 2rem;
+    height: 3.8rem; 
+    line-height: 160%;
+    border-radius: 1.9rem;
+}
+banner-section{
+    display: block;
+    .header{
+        height: 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            height: 2.8rem;
+        }
+        .explore-link{
+            @extend %button;
+            display: inline-block;
+            background: $palette-1;
+            color: $palette-2;
+            &.notes{
+                background: rgb(197, 197, 69);
+            }
+        }
+    }
+    .banner{
+        background: url('/assets/resources/img/bg-section-1.webp') center center no-repeat;
+        background-size: cover;
+        min-height: calc(100vh - 8rem);
+        margin: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    a{
+        font-size: 1rem;
+        text-decoration: none;
+    }
+    h3{
+        font-style: italic;
+    }
+    h3,
+    h1{
+        color: $palette-2;
+    }
+    .btn{
+        @extend %button;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        background: $palette-2;
+        max-width: 24rem;
+    }
+}
+
+
+@keyframes frameBlueAnimation{
+    0%{
+        background-position: 0;
+    }
+    40%{
+        background-position: 100%;
+    }
+    100%{
+        background-position: 100%;
+    }
+}

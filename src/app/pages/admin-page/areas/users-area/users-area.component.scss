@@ -1,0 +1,65 @@
+@import "src/sass/admin/colors";
+@import "src/sass/admin/metrics";
+
+:host{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .content{
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .ep-title{
+        margin-right: 8rem;
+    }
+    .container{
+
+    }
+    table {
+        width: 100%;
+        th:not(:first-child){
+            width: 23%;
+        }
+    }  
+    .area-header{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .filter-form {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        mat-form-field{
+            min-width: 18rem
+        }
+    }
+    .ep-text-center {
+        margin-top: 3rem;
+    }
+    .footer{
+        font-size: 0.84rem;
+        text-align: center;
+    }
+}
+@media (max-width: 758px){
+    :host{
+        button{
+            min-width: unset !important;
+        }
+        .row.area-header{
+            display: flex;
+            flex-direction: column;
+            .filter-form{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                > *:not(button) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

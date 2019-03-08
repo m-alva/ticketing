@@ -1,0 +1,49 @@
+<ng-template cdkPortal doomPortalPush="layout-header-left">
+  <button mat-button (click)="backClicked()"><mat-icon prefix>keyboard_backspace</mat-icon> Volver</button>
+</ng-template>
+<ng-template cdkPortal doomPortalPush="layout-header-right">
+  <button mat-raised-button color="primary" (click)="openTicketForm()">
+    <mat-icon fxHide fxShow.xs="true">
+      add
+    </mat-icon>
+    <span fxShow fxHide.xs="true">New</span>
+  </button>
+  <button mat-button color="primary" (click)="editTicket()">
+    <mat-icon fxHide fxShow.xs="true">
+      edit
+    </mat-icon>
+    <span fxShow fxHide.xs="true">Edit</span>
+  </button>
+  <button mat-button color="primary" (click)="deleteTicket()">
+    <mat-icon fxHide fxShow.xs="true">
+      delete
+    </mat-icon>
+    <span fxShow fxHide.xs="true">Delte</span>
+  </button>
+</ng-template>
+<admin-template>
+  <div class="content" content>
+    <div class="container">
+        <div class="cursos-logo">
+          
+        </div>
+        <div class="row">
+          <h1 class="ep-title">Tickets for {{organization.name}}</h1>
+        </div>
+    </div>
+    <div class="container">
+      <mat-list role="list">
+        <mat-list-item *ngFor="let item of dataSource?.data" role="listitem">
+          <mat-checkbox (click)="singleSelect(item)"></mat-checkbox>
+          <span class="ticket-information">{{item.title}}</span>
+          <span class="ticket-information">{{item.observation}}</span>
+          <span class="ticket-information" [style.color]="item.state == 'started' ? 'red' : 'green'">{{item.state}}</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div class="footer" layoutFooter>
+    <ep-button class="secundary">Centro de ayuda</ep-button>
+    <ep-button [routerLink]="['/administrador/area/login']" >Cerrar sesión</ep-button>
+  </div>
+</admin-template>

@@ -1,0 +1,24 @@
+<ng-template cdkPortal doomPortalPush="layout-header-left">
+  <button mat-button (click)="backClicked()"><mat-icon prefix>keyboard_backspace</mat-icon> Volver</button>
+</ng-template>
+<admin-template>
+  <div class="wrapper" content>
+    <form class="frm-login" [formGroup]="form">
+      <div class="header-fill"></div>
+      <div class="frm-padding">
+          <img class="logo" src="/assets/resources/img/admin/logo.png" alt="">
+          <h4>Comprueba el estado de la certificación</h4>
+          <mat-form-field class="full-width">
+            <input matInput (keyup.enter)="verificar()" placeholder="Identificación" [formControlName]="'identificacion'" name="identificacion" required>
+            <mat-error>Identificación no encontrada</mat-error>
+          </mat-form-field>
+          <div class="row">
+            <ep-button  class="full-width" (click)="verificar()" >CONSULTAR</ep-button>
+          </div>
+          <div class="image-footer">
+            <img src="/assets/resources/img/admin/companies.png" alt="">
+          </div>
+      </div>
+    </form>
+  </div>
+</admin-template>

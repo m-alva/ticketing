@@ -1,0 +1,25 @@
+<background-template>
+  <div class="wrapper">
+    <form class="frm-login">
+      <div class="header-fill"></div>
+      <div class="frm-padding">
+        <img class="logo" src="/assets/resources/svg/epage.svg" alt="">
+        <div class="row">
+          <p>Ingresa tu correo de recuperación para enviarte los pasos para recuperar tu contraseña</p>
+        </div>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Correo de recuperación" value="">
+        </mat-form-field>
+        <div class="row">
+          <ep-button class="full-width">ENVIAR</ep-button>
+        </div>
+        <div class="row">
+          <p>Si tienes problemas escribenos a <a href="mailto:soporte@paduum.com">soporte@paduum.com</a></p>
+        </div>
+        <div class="row">
+          <a class="back-link" [routerLink]="['/admin/area/login']">Volver al inicio de sección</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</background-template>

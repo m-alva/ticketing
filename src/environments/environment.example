@@ -1,0 +1,26 @@
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false,
+  restful:{
+    'url': 'http://restful.uvotechgroup.com/rest/v1/',
+    'base': "http://restful.uvotechgroup.com/",
+    'description' : 'Configuraciones para comunicarse con el servidor de datos'
+  },
+  content:{
+    //apiUrl: "http://epage.paduum.com/beta/backend2/public/rest/api/v1/"
+    apiUrl: "http://localhost/epage-front/backend2/public/rest/api/v1/"
+    //apiUrl: "http://10.95.214.103/api-rest/public/rest/v1/"
+    //apiUrl: "http://restful.uvotechgroup.com/rest/v1/"
+  }
+};
+
+/*
+ * In development mode, to ignore zone related error stack frames such as
+ * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can
+ * import the following file, but please comment it out in production mode
+ * because it will have performance impact when throw error
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

@@ -1,0 +1,241 @@
+.icon-svg{
+}
+
+div,
+span,
+p,
+a{
+    line-height: 160%;
+}
+
+a,
+a:visited{
+    color: #0087af;
+}
+
+.container{
+    width: 100%;
+    max-width: 76%;
+    margin: 0 auto;
+    @media screen and (max-width: 50rem) {
+        max-width: 100%;
+        padding: 1rem;        
+    }
+}
+
+ul.normal-list{
+    li{
+        list-style-type: none;
+        line-height: $paragrah-line-height;
+        font-size:  $paragraph-font-tiny-height;
+        &::before{
+            content: '\25A0';
+            color: $color-font-primary;
+            padding-right: 0.8rem;
+        }
+    }
+}
+
+.row,
+.row.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .col,
+    .column{
+        flex-basis: 100%;
+    }
+}
+
+epage-component-base{
+    &.component-selected {
+        position: relative;
+        z-index: 0;
+        &::before {
+            position: absolute;
+            z-index: 1;
+            content: "";
+            pointer-events: none;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+            background-color: rgba(255,0,0,0.08);
+        }
+    }
+}
+
+epage-section-container{
+    > .ng-star-inserted{
+        &:last-child{
+        padding-bottom: 2rem;
+        }
+    }
+}
+
+.title{
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+    font-weight: 300;
+    text-align: center;
+    color: $color-font-primary;
+}
+.paragraph{
+    font-size: 1rem;
+    line-height: 2.4rem;
+    color: $color-font-primary-lighten;
+}
+.paragraphs{
+    @extend .paragraph;
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
+    @media screen and (max-width: 60rem){
+        max-width: 100%;
+    }
+}
+
+.center{
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    font-size: 0.84rem;
+    background: rgba(255,255,255,0.2);
+    margin: 0rem 0.2rem;
+    border-radius: 0.2rem;
+    min-width: 10rem;
+    transition: background-color 0.4s;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+        background: rgba(255,255,255,0.4);
+    }
+    &.dark{
+        color: white;
+        background: rgba(40,40,40,1);
+        &:hover{
+            color: white;
+            background-color: $color-theme-primary;
+        }
+    }
+    &.green{
+        color: white;
+        background-color: $color-theme-primary;
+        &:hover{
+            color: white;
+            background-color: rgba(40,40,40,1);
+        }
+    }
+
+}
+
+.full-width{
+    width: 100%;
+}
+
+.icon-btn{
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background: $color-font-primary;
+        color: white;
+    }
+}
+
+.owl-carousel{
+    .owl-stage-outer{
+        padding: 4rem 0rem;
+    }
+}
+
+/** epage style **/
+
+paduum-page{
+    h1,h2,h3,h4,h5,h6{
+        font-weight: 300;
+    }
+    h1{
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+    h2{
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+    h3{
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+    .center{
+        text-align: center;
+    }
+    %button{
+        padding: 0rem 2rem;
+        height: 3.8rem; 
+        line-height: 3.8rem;
+        border-radius: 1.9rem;
+    }
+    banner-section{
+        display: block;
+        .header{
+            height: 8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logo{
+                height: 2.8rem;
+            }
+            .explore-link{
+                @extend %button;
+                display: inline-block;
+                background: $color-theme-primary;
+                color: $color-theme-secondary;
+                &.notes{
+                    background: rgb(197, 197, 69);
+                }
+            }
+        }
+        .banner{
+            background: url('/assets/resources/img/bg-section-1.webp') center center no-repeat;
+            background-size: cover;
+            min-height: calc(100vh - 8rem);
+            margin: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        a{
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        h3{
+            font-style: italic;
+        }
+        h3,
+        h1{
+            color: $color-theme-secondary;
+        }
+        .btn{
+            @extend  %button;
+            padding-left: 4rem;
+            padding-right: 4rem;
+            background: $color-theme-secondary;
+            max-width: 24rem;
+        }
+    }
+}

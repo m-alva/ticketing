@@ -1,0 +1,11 @@
+<div [class]="'admin-layout '+share.currentTemplate">
+    <div [@routeAnimations]="prepareRoute(outlet)" class="route-children">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+    <div class="ep-footer">
+        <div class="copyright">
+            <span><a href="mailto:support@ticketing.com">www.ticketing.com</a></span>
+            <span><a href="mailto:">support@ticketing.com</a></span>
+        </div>
+    </div>
+</div>

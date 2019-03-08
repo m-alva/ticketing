@@ -1,0 +1,96 @@
+@import "src/sass/admin/colors";
+@import "src/sass/admin/metrics";
+
+admin-template{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    .layout-header{
+        background: #F9F9F9;
+        box-shadow: 0 0 0.6rem 0 rgba(0,0,0,0.28);
+        .row-between{
+            display: flex;
+            flex-direction: space-between;
+            align-items: center;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+            .layout-header-left,
+            .layout-header-center,
+            .layout-header-right{
+                flex: 1 1 auto;
+                button:not(:last-child) {
+                    margin-right: 0.4rem;
+                }
+            }
+            .layout-header-left{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .layout-header-center{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .layout-header-right{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+        }
+    }
+    .content-template{
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        flex-grow: 1;
+        overflow: auto;
+    }
+    @media screen and (max-width: $mobile-breackpoint){
+        .footer{
+            .copyright{
+                flex-direction: column;
+                align-items: center;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+.admin{
+    
+    &.admin-layout{
+        background: white;
+    }
+    .ep-container.logo{
+        position: relative;
+        margin: 0 auto;
+        .logo{
+            position: absolute;
+            top: 1.3rem;
+        }
+    }
+    .frame-blue {
+        height: 0.9rem;
+        background: linear-gradient(125deg, $palette-1, $palette-2, $palette-1);
+        background-size: 200%;
+        animation: frameBlueAnimation 10s infinite;
+    }
+    .ep-footer{
+        padding: 1rem 2rem;
+        background: $palette-2;
+        .copyright{
+            display: flex;
+            justify-content: space-between;
+            color: #ffffff;
+            *{
+                color: #ffffff;
+                text-decoration: none;
+                &:hover{
+                    color: #aaaaaa;
+                }
+            }
+        }
+    }
+}

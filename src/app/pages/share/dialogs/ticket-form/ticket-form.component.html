@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>New ticket</h1>
+<mat-dialog-content>
+  <form [formGroup]="mainform" >
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Title" formControlName="title" type="text" autocomplete="title" required>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Observation" formControlName="observation" type="text" autocomplete="observation" required>
+      </textarea>
+    </mat-form-field>
+    <mat-form-field class="full-width" >
+      <mat-select placeholder="State" formControlName="state">
+        <mat-option value="started">Started</mat-option>
+        <mat-option value="started">Resolve</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="save()">GUARDAR</button>
+  <button mat-button mat-dialog-close>CANCELAR</button>
+</mat-dialog-actions>

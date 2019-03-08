@@ -1,0 +1,22 @@
+.epage-constructor{
+    @import "src/sass/template/_colors";
+    @import "src/sass/template/_metrics";
+    
+    @import "src/sass/template/_base";
+    @import "src/sass/template/_preloader";
+        
+
+    font-family: "Montserrat", "Libre Franklin", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: $color-font-primary;
+    background: $color-background-primary;
+    @media (min-width: 1400px) {
+        font-size: 0.82vw;
+    }
+
+    body{
+        margin: 0px;
+        padding: 0px;
+    }    
+}

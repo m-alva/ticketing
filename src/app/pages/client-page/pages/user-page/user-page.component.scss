@@ -1,0 +1,67 @@
+@import "src/sass/admin/colors";
+@import "src/sass/admin/metrics";
+
+:host{
+    display: block;
+    .content{
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    h1 {
+        margin-top: 2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    .cursos-logo{
+        text-align: center;
+        img{
+            max-width: 14rem;
+        }
+    }
+    .course-item{
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border-radius: 1.3rem;
+        padding-left: 3rem;
+        height: 2.6rem;
+        background: #eeeeee;
+        color: #777777;
+        transition: all 0.4s;
+        overflow: hidden;
+        cursor: pointer;
+        &::after{
+            content: "";
+            position: absolute;
+            background: white;
+            left: 0;
+            top: 0;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 1.3rem;
+            transform: translateX(-100%);
+            transition: all 0.4s;
+        }
+        &:hover{
+            background-color: $palette-1;
+            color: white;
+            &::after{
+                transform: translateX(-25%);
+            }
+        }
+    }
+    mat-list{
+        width: 100%;
+        margin: auto;
+        max-width: 26rem;
+        mat-list-item{
+            .curso-name{
+                margin-left: 1rem;
+                flex: 1 1 100%;
+            }
+        }
+    }
+}

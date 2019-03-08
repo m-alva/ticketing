@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="cursos-logo">
+      <img *ngIf="cert?.empresa == 'quiron'" src="assets/resources/img/admin/Groupquiron.svg" alt="">
+      <img *ngIf="cert?.empresa == 'jarp'" src="assets/resources/img/admin/Jarp.svg" alt="">
+      <img *ngIf="cert?.empresa == 'mindset'" src="assets/resources/img/admin/Mindset.svg" alt="">
+      <img *ngIf="cert?.empresa == 'dealing'" src="assets/resources/img/admin/Dealing.svg" alt="">
+    </div>
+    <h3 class="certified-name">El usuario identificado como <b>{{ cert?.nombre }} {{ cert?.apellido }}</b> se encuentra certificado al curso</h3>
+    <h1 class="certified-course">{{cert?.curso_nombre}}</h1>
+    <p class="certified-description">{{cert?.curso_descripcion}}</p>
+    <p class="certified-date"><b>Fecha de certificación:</b> {{ format(cert?.fecha_inicio) }} / {{ format(cert?.fecha_finalizado) }}</p>
+    <div class="certified-buttons">
+      <button mat-dialog-close mat-raised-button color="primary">CERRAR</button>
+      <button mat-raised-button color="primary" (click)="close()">IMPRIMIR</button>
+    </div>
+  </div>
+  <div class="footer-images">
+    <div class="image-group">
+      <img src="/assets/resources/img/admin/grupo-ingenio.png" alt="">
+    </div>
+    <div class="image-footer">
+      <img src="/assets/resources/img/admin/companies.png" alt="">
+    </div>
+  </div>
+</div>

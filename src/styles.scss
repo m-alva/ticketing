@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "src/sass/template/_reset";
+
+@import "src/sass/admin/index";
+
+@import "src/sass/template/index";
+
+html{
+    height: 100%;
+    body{
+        height: 100%;
+        app-root{
+            display: block;
+            height: 100%;
+            epage-container{
+                display: flex;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.mat-form-field-label,
+.mat-input-element{
+    font-size: 0.9rem!important;
+}

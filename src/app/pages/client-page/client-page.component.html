@@ -1,0 +1,14 @@
+<div [class]="'admin-layout '+share.currentTemplate">
+  <div [@routeAnimations]="prepareRoute(outlet)" class="route-children">
+      <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <div class="ep-footer">
+      <div class="copyright">
+          <span><a href="http://www.grupoingenio.co">www.grupoingenio.co</a></span>
+          <span>
+            <a href="mailto:gerencia@grupoingenio.co">gerencia@grupoingenio.co </a>
+            <a [routerLink]="['/administrador/area/login']"><i class="fas fa-sliders-h"></i></a>
+        </span>
+      </div>
+  </div>
+</div>

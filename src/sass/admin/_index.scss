@@ -1,0 +1,27 @@
+.epage-admin{
+    @import "src/sass/admin/_colors";
+    @import "src/sass/admin/_metrics";
+    client-page,
+    admin-page{
+        @import "src/sass/admin/_base";
+        @import "src/sass/admin/_preloader";
+    }
+
+    .full-width{
+        width: 100%;
+    }
+
+    font-family: "Montserrat", "Libre Franklin", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: $palette-10;
+    line-height: 160%;
+    @media (min-width: 1400px){
+        font-size: 0.82vw;
+    }
+
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+}

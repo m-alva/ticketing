@@ -1,0 +1,26 @@
+<background-template>
+  <div class="wrapper">
+    <form class="frm-login" [formGroup]="form">
+      <div class="header-fill"></div>
+      <div class="frm-padding">
+          <img class="logo" src="/assets/resources/img/admin/logo.png" alt="">
+          <!-- Ingrese usuario -->
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Usuario" [formControlName]="'user'" name="user" required>
+            <mat-error>Coloque su usuario</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput (keyup.enter)="logIn()" placeholder="Contraseña" [formControlName]="'password'" name="password" required>
+            <mat-error>Coloque su contraseña</mat-error>
+          </mat-form-field>
+          <div class="row">
+            <!-- [routerLink]="['/admin/area/data-access']" -->
+            <ep-button  class="full-width" (click)="logIn()" >INGRESAR</ep-button>
+          </div>
+          <div class="row">
+            <a class="forgot-link" [routerLink]="['/admin/area/forgot']">¿Tienes problemas para iniciar?</a>
+          </div>
+      </div>
+    </form>
+  </div>
+</background-template>

@@ -1,0 +1,7 @@
+<label>{{_placeholder}}</label>
+<div class="color-box">
+  <div class="cutter">
+    <input type="color" [(ngModel)]="value" (change)="valueChanged($event)">
+  </div>
+  <span>{{value}}</span>
+</div>

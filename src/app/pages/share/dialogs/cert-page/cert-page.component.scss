@@ -1,0 +1,57 @@
+:host{
+    display: block;
+    font-size: 1.1rem;
+    line-height: 160%;
+    .wrapper{
+        margin: 0 auto;
+        max-width: 80rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: calc(100vh - 48px);
+    }
+    .cursos-logo{
+        text-align: center;
+        margin: 2rem auto;
+        img{
+            height: 8rem;
+        }
+    }
+    .certified-name {
+        text-align: center;
+        max-width: 40rem;
+        margin: 0 auto;
+        font-weight: normal;
+        font-size: 1.6rem;
+        line-height: 160%;
+        margin: 0.4rem auto;
+    }
+    .certified-course {
+        text-align: center;
+        font-weight: bold;
+        font-size: 3rem;
+        line-height: 160%;
+        margin: 0.4rem auto;
+    }
+    .certified-description {
+        text-align: center;
+    }
+    .certified-date {
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .certified-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+        button {
+            margin: 0 0.4rem;
+        }
+    }
+    .footer-images {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

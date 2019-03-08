@@ -1,0 +1,23 @@
+<ng-template cdkPortal doomPortalPush="layout-header-left">
+  <button mat-button (click)="backClicked()"><mat-icon prefix>keyboard_backspace</mat-icon> Volver</button>
+</ng-template>
+<admin-template>
+  <div class="wrapper" content>
+    <div class="container">
+      <h4>Usuario: <b>{{student?.nombre}} {{student?.apellido}}</b></h4>
+      <div class="">
+        <h1>Certificaciones</h1>
+        <div class="container">
+          <mat-list role="list">
+            <mat-list-item *ngFor="let item of dataCourses | async" role="listitem">
+              <button (click)="openCertified(item.ref)" class="course-item">{{item.curso_nombre}}</button>
+            </mat-list-item>
+            <mat-list-item *ngIf="coursesNoAvailables">
+              <p>No hay certificados registrados para este estudiante</p>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</admin-template>

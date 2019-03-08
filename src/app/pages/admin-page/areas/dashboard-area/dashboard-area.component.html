@@ -1,0 +1,28 @@
+<ng-template cdkPortal doomPortalPush="layout-header-left">
+  <button mat-button (click)="logOut()"><mat-icon prefix>exit_to_app</mat-icon> 
+    <span fxShow fxHide.xs="true">Sign Up</span>
+  </button>
+</ng-template>
+<ng-template cdkPortal doomPortalPush="layout-header-right">
+  <button mat-raised-button color="primary" [routerLink]="['/organizations']" >Organizations</button>
+  <button mat-raised-button color="primary" [routerLink]="['/users']" >Users</button>
+</ng-template>
+<admin-template>
+  <div class="content" content>
+    <div class="container">
+      <h1>Hi, {{user?.name}}</h1>
+      <div class="row companies">
+        <div class="col organization" *ngFor="let organization of organizations">
+          <a [routerLink]="['/tickets', organization.ref]" >
+            <h3>{{organization.name}}</h3>
+            <div class="organiaztion-box" [style.backgroundColor]="organization.organization_color"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div layoutFooter>
+    <div class="container">
+    </div>
+  </div>
+</admin-template>

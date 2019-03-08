@@ -1,0 +1,38 @@
+:host{
+    display: block;
+    text-align: left;
+    label{
+        padding-left: 0.4rem;
+        width: 100%;
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    .input-wrapper{
+        width: 100%;
+        background: #f2f2f2;
+        border: 1px solid #e0e0e0;
+        height: 2.8rem;
+        padding: 0.4rem 1.2rem;
+        border-radius: 0.6rem;
+        line-height: 2.4rem;
+        display: flex;
+        align-items: center;
+        input{
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+            color:#444;
+            &::placeholder{
+                font-family: "Montserrat";
+                font-size: 0.9rem;
+                color: #c2c2c2;
+            }
+            &:focus{
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}

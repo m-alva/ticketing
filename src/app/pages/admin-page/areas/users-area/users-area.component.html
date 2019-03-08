@@ -1,0 +1,98 @@
+<ng-template cdkPortal doomPortalPush="layout-header-left">
+  <button mat-button (click)="backClicked()"><mat-icon prefix>keyboard_backspace</mat-icon> Back</button>
+</ng-template>
+<ng-template cdkPortal doomPortalPush="layout-header-right">
+  <button mat-raised-button color="primary" (click)="openUserForm()">
+    <mat-icon fxHide fxShow.xs="true">
+      add
+    </mat-icon>
+    <span fxShow fxHide.xs="true">New</span>
+  </button>
+  <button mat-button color="primary" (click)="editUser()">
+    <mat-icon fxHide fxShow.xs="true">
+      edit
+    </mat-icon>
+    <span fxShow fxHide.xs="true">Edit</span>
+  </button>
+  <button mat-button color="primary" (click)="deleteUser()">
+    <mat-icon fxHide fxShow.xs="true">
+      delete
+    </mat-icon>
+    <span fxShow fxHide.xs="true">Delete</span>
+  </button>
+</ng-template>
+<admin-template>
+  <div class="content" content>
+    <div class="container">
+      <div class="row area-header">
+        <h1 class="ep-title">
+          Users
+        </h1>
+        <div class="filter-form">
+          <mat-form-field>
+            <input matInput placeholder="Email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Name">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="applyFilter($event.target.value)"><mat-icon>search</mat-icon> Search</button>
+        </div>
+      </div>
+      
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? singleSelect(row) : null"
+                          [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <!-- Identificacion Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>        
+    
+        <!-- Progress Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="last_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Lastname </th>
+          <td mat-cell *matCellDef="let row"> {{row.last_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> role </th>
+          <td mat-cell *matCellDef="let row"> {{ row.role }} </td>
+        </ng-container>        
+
+        <ng-container matColumnDef="created">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> created </th>
+          <td mat-cell *matCellDef="let row"> {{ row.created }} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>
+  <div class="footer" layoutFooter>
+  </div>
+</admin-template>
